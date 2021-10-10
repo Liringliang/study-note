@@ -45,15 +45,46 @@
 
 <p>第四</p><p>第五</p><p>第六</p>
 
-```
+```html
 <p>第四</p><p>第五</p><p>第六</p>
+```
+
+**注释**
+
+```html
+<!--注释-->
 ```
 
 
 
 ### 第二节 元素
 
-元素也可以拥有属性，如下：
+### 1.常见元素
+
+**（1）**
+
+`main`	让搜索引擎和开发者能很快地找到网页的主要内容。
+
+​			举例：
+
+```html
+<main> 
+  <h1>Hello World</h1>
+  <p>Hello Paragraph</p>
+</main>
+```
+
+`header`	页首
+
+`footer	`	页脚
+
+`nav	`
+
+`video`	`article	`	
+
+`section	`	
+
+**（2）元素也可以拥有属性，如下：**
 
 ![&amp;amp;lt;p class="editor-note">我的猫咪脾气爆&amp;amp;lt;/p>](https://mdn.mozillademos.org/files/16476/attribute.png)
 
@@ -65,25 +96,96 @@
 2. 属性名称，后面跟着一个等于号。
 3. 一个属性值，由一对引号“ ”引起来。
 
-### 1.图像
 
-<img src="https://roy-tian.github.io/learning-area/extras/getting-started-web/beginner-html-site/images/firefox-icon.png" style="zoom:33%;" >
 
+### 2.图像
+
+```html
+<img src="https://www.freecatphotoapp.com/your-image.jpg">
 ```
-<img src="https://roy-tian.github.io/learning-area/extras/getting-started-web/beginner-html-site/images/firefox-icon.png" style="zoom:33%;" >
+
+`img`	表示图片元素，`src`	属性表示指向图片的地址，没有结束标签。
+
+所有的 `img` 元素 **必须** 有 `alt` 属性。 `alt` 的属性值有两个作用，第一个作用是让屏幕阅读器可以知晓图片的内容，这会对网页的可访问性有很大提升；另一个作用是当图片无法加载时，页面需要显示的替代文本。
+
+```html
+<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="A business cat wearing a necktie.">
 ```
+<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="A business cat wearing a necktie." style="zoom:25%;" >
 
-以上是一个空元素，即只有一个属性。
 
-### 2.锚及其附属的属性
+### 3.锚及其附属的属性
 
-元素`<a>`是锚，它使被标签包裹的内容成为一个超链接。此元素也可以添加大量的属性，其中几个如下：
+元素`<a>`是锚（Anchor，简写为 a），它使被标签包裹的内容成为一个超链接。此元素也可以添加大量的属性，其中几个如下：
 
-- `href`: 这个属性声明超链接的web地址，当这个链接被点击浏览器会跳转至href声明的web地址。例如：`href="https://www.mozilla.org/"`。
-<a href=https://www.mozilla.org/>收藏页面</a>
-  URL 片段是哈希标记（#）前面的名称，哈希标记指定当前文档中的内部目标位置（HTML 元素的 ID）。
+- `href`	点击链接后指向跳转的目的地，四个功能：
 
-  **注意:** 可以使用 `href="#top"` 或者 `href="#"` 链接返回到页面顶部。
+  **功能一：用 a 实现网页间的跳转**
+
+  ```html
+  <a href="https://www.freecodecamp.org">this links to freecodecamp.org</a>
+  ```
+  <a href="https://www.freecodecamp.org">this links to freecodecamp.org</a>
+
+  
+
+  **功能二：用 a 实现网页内部跳转**
+
+  创建内部链接，跳转到网页内的各个不同部分。
+
+  要创建内部链接，你需要将链接的 `href` 属性值设置为一个哈希符号 `#` 加上你想内部链接到的元素的 `id`，通常是在网页下方的元素。 然后你需要将相同的 `id` 属性添加到你链接到的元素中。 `id` 是描述网页元素的一个属性，它的值在整个页面中唯一。
+
+  当用户点击了 `Contacts` 链接，页面就会跳转到网页的 **Contacts** 区域。
+
+  ```html
+  <a href="#contacts-header">Contacts</a>
+  ...
+  <h2 id="contacts-header">Contacts</h2>
+  ```
+
+  效果：
+  
+  <a href="#contacts-header">Contacts</a>
+  ...
+
+  <h2 id="contacts-header">Contacts</h2
+
+  **注：**如果要实现页面头部和尾部的跳转，可以设置`id`值为`header``footer`
+  
+  ```html
+  <a href="#footer">跳转至尾部</a>
+  ...
+  <h2 id="footer">尾部</a>
+  ```
+  
+  效果：
+  
+  <a href="#footer">跳转至尾部</a>
+  ...
+
+  <h2 id="footer">尾部</a>
+
+  **功能三：将 a 嵌套在段落中**
+  
+  可以在其他文本元素内嵌套链接。
+  
+  ```html
+  <p>
+    Here's a <a target="_blank" href="https://www.freecodecamp.org"> link to www.freecodecamp.org</a> for you to follow.
+  </p>
+  ```
+
+  `target` 是锚点元素的一个属性，它用来指定链接的打开方式。 属性值 `_blank` 表示链接会在新标签页打开。 `href` 是锚点元素的另一个属性，它用来指定链接的 URL。  `a` 元素内的文本 `link to www.freecodecamp.org` 叫作锚文本，会显示为一个可以点击的链接：
+
+  Here's a [link to www.freecodecamp.org](https://www.freecodecamp.org/) for you to follow.
+
+**功能四：用#号来创建链接占位符**
+
+有时你想为网站添加一个 `a` 元素，但还不确定要将它链接到哪里。
+
+当你使用 `JavaScript` 更改链接的指向时，这也很方便，我们将在后面的课程中介绍。
+
+例如: `href="#"`
 
 - `title`: 标题`title`属性为超链接声明额外的信息，比如你将链接至的那个页面。例如：`title="The Mozilla homepage"`。当鼠标悬停在超链接上面时，这部分信息将以工具提示的形式显示。
 
@@ -96,22 +198,29 @@
 
   **注意：**在 `<a>` 元素上使用 `target="_blank"` 隐式提供了与使用 `rel="noopener"` 相同的 `rel` 行为，即不会设置 `window.opener`。
   
-  ### 3.布尔属性
   
-  ```html
-  <!-- 使用disabled属性来防止终端用户输入文本到输入框中 -->
-  <input type="text" disabled>
-  
-  <!-- 下面这个输入框没有disabled属性，所以用户可以向其中输入 -->
-  <input type="text">
-  ```
-  
-  上面两段HTML代码产生的效果如下：
-  <input type="text" disabled>
-   <input type="text">
 
+### 4.布尔属性
 
+```html
+<!-- 使用disabled属性来防止终端用户输入文本到输入框中 -->
+<input type="text" disabled>
 
+<!-- 下面这个输入框没有disabled属性，所以用户可以向其中输入 -->
+<input type="text">
+```
+
+上面两段HTML代码产生的效果如下：
+<input type="text" disabled>
+<input type="text">
+
+### 5.
+
+### 6.
+
+### 7.
+
+### 8.
 
 
 
