@@ -80,7 +80,7 @@
 元素`<a>`是锚，它使被标签包裹的内容成为一个超链接。此元素也可以添加大量的属性，其中几个如下：
 
 - `href`: 这个属性声明超链接的web地址，当这个链接被点击浏览器会跳转至href声明的web地址。例如：`href="https://www.mozilla.org/"`。
-
+<a href=https://www.mozilla.org/>收藏页面</a>
   URL 片段是哈希标记（#）前面的名称，哈希标记指定当前文档中的内部目标位置（HTML 元素的 ID）。
 
   **注意:** 可以使用 `href="#top"` 或者 `href="#"` 链接返回到页面顶部。
@@ -95,6 +95,25 @@
   - `_top`: IHTML4中：加载的响应成完整的，原来的窗口，取消所有其它frame。 HTML5中：加载响应进入顶层浏览上下文（即，浏览上下文，它是当前的一个的祖先，并且没有parent）。如果没有parent框架或者浏览上下文，此选项的行为方式相同_self
 
   **注意：**在 `<a>` 元素上使用 `target="_blank"` 隐式提供了与使用 `rel="noopener"` 相同的 `rel` 行为，即不会设置 `window.opener`。
+  
+  ### 3.布尔属性
+  
+  ```html
+  <!-- 使用disabled属性来防止终端用户输入文本到输入框中 -->
+  <input type="text" disabled>
+  
+  <!-- 下面这个输入框没有disabled属性，所以用户可以向其中输入 -->
+  <input type="text">
+  ```
+  
+  上面两段HTML代码产生的效果如下：
+  <input type="text" disabled>
+   <input type="text">
+
+
+
+
+
 
 ## 第二部分 
 

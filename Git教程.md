@@ -1308,3 +1308,37 @@ warning: You appear to have cloned an empty repository.
 要方便管理公钥，用Gitosis；
 
 要像SVN那样变态地控制权限，用Gitolite。
+
+## 附录四 缩略操作
+
+<img src="C:\Users\钟东良\AppData\Roaming\Typora\typora-user-images\image-20211010105906693.png" alt="image-20211010105906693"  />
+
+`git status`	查看状态
+
+`git add <file>`	添加新增的文件到本地仓库文件夹中
+
+`git add .`	他会监控工作区的状态树，使用它会把工作时的**所有变化提交**到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。
+
+`git status`	查看状态
+
+`git commit -m"任意标记"`	将所有的暂存区的文件上传到本地仓库
+
+`git pull`	若在远程仓库中新增或修改内容，需要先将远程仓库的文件传至本地仓库，再进行下一步
+
+`git push`	从第二次开始，直接使用该代码将本地仓库所有内容上传到远程仓库
+
+`git status`查看状态，若显示“working tree clean”即表示所有暂存区里的内容清空，所有内容上传成功
+
+
+
+**其他的**
+
+删除本地仓库里的文件，
+
+第一步，直接在文件夹中删除或`$ rm <file>`，此时仓库和工作区的内容就不一样了,键入`git status`来查看状态；
+
+第二步，从仓库中删除该文件，调出仓库的Git，键入：
+
+`git rm`	然后	`git commit -m"任意标记"`
+
+即文件从仓库中删除。
