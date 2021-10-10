@@ -2,7 +2,7 @@
 
 [TOC]
 
-### 一、Typora基本语法指南
+## 一、Typora基本语法指南
 
 ### Typora简介
 
