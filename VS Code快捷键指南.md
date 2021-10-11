@@ -1,4 +1,4 @@
-# VS Code快捷键指南
+# VS Code快捷键
 
 ## **一、vs code 的常用快捷键**
 
